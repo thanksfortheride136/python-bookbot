@@ -14,15 +14,16 @@ def get_book_text():
     with open("books/frankenstein.txt") as f:
         print(f.read())
 
+
+
 def character_count():
-    char_count = 0
     character_dict = {}
     with open("books/frankenstein.txt") as character_count:
         for words in character_count: 
-            for chars in words:
-                char_count += 1
-                character_dict = {chars: char_count}
-                #print(chars.lower())
-                print(character_dict)
-        #print(f"There are {char_count} characters in Frankenstein")
-        
+            for chars in words: #chars prints each character out, i just nee to count them essentially
+                if chars in character_dict:
+                    character_dict.update({chars: character_dict[chars]})
+                else:
+                    character_dict.update({chars: value})
+            print(character_dict[chars])
+                    
