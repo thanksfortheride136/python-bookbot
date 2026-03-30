@@ -7,7 +7,7 @@ def count_words():
             for individual_words in listed_words:  #splits string into words
                 individual_words.split()
                 word_count += 1
-        print(f"Found {word_count} total words")
+        return f"Found {word_count} total words"
 
 #This function reads the entire book Frankenstein
 def get_book_text():
@@ -18,18 +18,42 @@ def get_book_text():
 """Iterates through each char and returns a dict count of each
     The first loop iterates through each line and could print 
     a word, the second loop interates through and could print char.
-    the conditional checks if a value is in the dict and then
+    the conditional checks if a value is in the dict and then counts the 
+    values.
 """
 def character_count():
     character_dict = {}
     with open("books/frankenstein.txt") as character_counts:
-        for words in character_counts: #iterating through each lines
-            for chars in words:        #iterating through each word
+        for words in character_counts: 
+            for chars in words:       
                 lower_chars = chars.lower()
                 if lower_chars not in character_dict:
-                    character_dict[lower_chars] = 1  #this is it jus need proper syntax
+                    character_dict[lower_chars] = 1  
                 else:
                     character_dict[lower_chars] += 1
-        
         return character_dict
+
+def select_dict_value(dictionary):
+    return dictionary[lower_chars]
+
+
+def sort_character_values(dictionary):
+    sorted(dictionary, key=select_dict_value)
+    
+
+
+def generate_report(character_dictionary, words):
+    print("============ BOOKBOT ============")
+    print("Analyzing book found at books/frankenstein.txt...")
+    print("----------- Word Count ----------")
+    print(words)
+    print("--------- Character Count -------")
+    print(character_dictionary)
+
+    #Print greeting message & bookbot title
+    #print returned number of words & word heading
+    #iterate through each dict value and sort
+    #print sorted value
+
+
                     
