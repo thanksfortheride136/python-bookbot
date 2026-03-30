@@ -33,12 +33,13 @@ def character_count():
                     character_dict[lower_chars] += 1
         return character_dict
 
-def select_dict_value(dictionary):
-    return dictionary[lower_chars]
+#This is the helper function that specifies the values to sort for sort_character_values()
+# def select_dict_value(dictionary): 
+#     #s
 
 
-def sort_character_values(dictionary):
-    sorted(dictionary, key=select_dict_value)
+# def sort_character_values(dictionary):
+#     #d
     
 
 
@@ -48,7 +49,7 @@ def generate_report(character_dictionary, words):
     print("----------- Word Count ----------")
     print(words)
     print("--------- Character Count -------")
-    print(character_dictionary)
+    
 
     #Print greeting message & bookbot title
     #print returned number of words & word heading
