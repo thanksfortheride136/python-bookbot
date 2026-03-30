@@ -1,6 +1,6 @@
 from stats import count_words, character_count
 def main():
     count_words()
-    character_count()
+    print(character_count())
 
 main()

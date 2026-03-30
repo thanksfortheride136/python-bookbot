@@ -15,15 +15,21 @@ def get_book_text():
         print(f.read())
 
 
-
+"""Iterates through each char and returns a dict count of each
+    The first loop iterates through each line and could print 
+    a word, the second loop interates through and could print char.
+    the conditional checks if a value is in the dict and then
+"""
 def character_count():
     character_dict = {}
-    with open("books/frankenstein.txt") as character_count:
-        for words in character_count: 
-            for chars in words: #chars prints each character out, i just nee to count them essentially
-                if chars in character_dict:
-                    character_dict.update({chars: character_dict[chars]})
+    with open("books/frankenstein.txt") as character_counts:
+        for words in character_counts: #iterating through each lines
+            for chars in words:        #iterating through each word
+                lower_chars = chars.lower()
+                if lower_chars not in character_dict:
+                    character_dict[lower_chars] = 1  #this is it jus need proper syntax
                 else:
-                    character_dict.update({chars: value})
-            print(character_dict[chars])
+                    character_dict[lower_chars] += 1
+        
+        return character_dict
                     
