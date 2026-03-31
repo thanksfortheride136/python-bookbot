@@ -1,8 +1,8 @@
 
 """This function counts the amount of words in the book Frankenstein"""
-def count_words():
+def count_words(path):
     word_count = 0
-    with open("books/frankenstein.txt") as word_counting:
+    with open(path) as word_counting:
         for words in word_counting:
             listed_words = words.split()           #splits string into sentences
             for individual_words in listed_words:  #splits string into words
@@ -11,8 +11,8 @@ def count_words():
         return f"Found {word_count} total words"
 
 """This function reads and can print the entire book Frankenstein"""
-def get_book_text():
-    with open("books/frankenstein.txt") as f:
+def get_book_text(path):
+    with open(path) as f:
         print(f.read())
 
 
@@ -22,9 +22,9 @@ def get_book_text():
     the conditional checks if a value is in the dict and then counts the 
     values.
 """
-def character_count():
+def character_count(path):
     character_dict = {}
-    with open("books/frankenstein.txt") as character_counts:
+    with open(path) as character_counts:
         for words in character_counts: 
             for chars in words:       
                 lower_chars = chars.lower()
@@ -43,9 +43,9 @@ def select_dict_value(dictionary):
 
 """This function prints a report and shows info about the book
     and removes any non-alphabetic chars"""
-def generate_report(character_dictionary, words, character_count):
+def generate_report(character_dictionary, words, character_count, path):
     print("============ BOOKBOT ============")
-    print("Analyzing book found at books/frankenstein.txt...")
+    print(f"Analyzing book found at {path}...")
     print("----------- Word Count ----------")
     print(words)
     print("--------- Character Count -------")
