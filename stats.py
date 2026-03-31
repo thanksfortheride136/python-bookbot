@@ -33,22 +33,24 @@ def character_count():
                     character_dict[lower_chars] += 1
         return character_dict
 
-#This is the helper function that specifies the values to sort for sort_character_values()
+#This is the function that uses the lambda value to sort. We obtain
+#the kv pair using .items() then can sort by specifying K index value
 def select_dict_value(dictionary): 
-    print(dictionary)
+    dictionary_items = dictionary.items()
+    dictionary = sorted(dictionary_items, key=lambda k: k[1], reverse=True)
+    return dictionary
 
 
-# def sort_character_values(dictionary):
-#     #d
-    
-
-
-def generate_report(character_dictionary, words):
+def generate_report(character_dictionary, words, character_count):
     print("============ BOOKBOT ============")
     print("Analyzing book found at books/frankenstein.txt...")
     print("----------- Word Count ----------")
     print(words)
     print("--------- Character Count -------")
+    for i in character_count:
+        if i[0].isalpha():
+            print(f"{i[0]}: {i[1]}")
+
     
 
     #Print greeting message & bookbot title
