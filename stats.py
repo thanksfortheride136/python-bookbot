@@ -43,7 +43,7 @@ def select_dict_value(dictionary):
 
 """This function prints a report and shows info about the book
     and removes any non-alphabetic chars"""
-def generate_report(character_dictionary, words, character_count, path):
+def generate_report(words, character_count, path):
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at {path}...")
     print("----------- Word Count ----------")
