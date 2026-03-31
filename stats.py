@@ -1,4 +1,5 @@
-#This function counts the amount of words in the book Frankenstein
+
+"""This function counts the amount of words in the book Frankenstein"""
 def count_words():
     word_count = 0
     with open("books/frankenstein.txt") as word_counting:
@@ -9,7 +10,7 @@ def count_words():
                 word_count += 1
         return f"Found {word_count} total words"
 
-#This function reads the entire book Frankenstein
+"""This function reads and can print the entire book Frankenstein"""
 def get_book_text():
     with open("books/frankenstein.txt") as f:
         print(f.read())
@@ -33,14 +34,15 @@ def character_count():
                     character_dict[lower_chars] += 1
         return character_dict
 
-#This is the function that uses the lambda value to sort. We obtain
-#the kv pair using .items() then can sort by specifying K index value
+"""This is the function that uses the lambda value to sort. We obtain
+the kv pair using .items() then can sort by specifying K index value"""
 def select_dict_value(dictionary): 
     dictionary_items = dictionary.items()
     dictionary = sorted(dictionary_items, key=lambda k: k[1], reverse=True)
     return dictionary
 
-
+"""This function prints a report and shows info about the book
+    and removes any non-alphabetic chars"""
 def generate_report(character_dictionary, words, character_count):
     print("============ BOOKBOT ============")
     print("Analyzing book found at books/frankenstein.txt...")
@@ -50,13 +52,4 @@ def generate_report(character_dictionary, words, character_count):
     for i in character_count:
         if i[0].isalpha():
             print(f"{i[0]}: {i[1]}")
-
-    
-
-    #Print greeting message & bookbot title
-    #print returned number of words & word heading
-    #iterate through each dict value and sort
-    #print sorted value
-
-
                     

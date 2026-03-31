@@ -1,3 +1,4 @@
+import sys
 from stats import count_words, character_count, generate_report, select_dict_value
 def main():
     char_dict = character_count()
