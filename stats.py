@@ -34,8 +34,8 @@ def character_count():
         return character_dict
 
 #This is the helper function that specifies the values to sort for sort_character_values()
-# def select_dict_value(dictionary): 
-#     #s
+def select_dict_value(dictionary): 
+    print(dictionary)
 
 
 # def sort_character_values(dictionary):
